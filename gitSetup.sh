@@ -1,7 +1,7 @@
 #!/bin/sh
 
 OPEN_YELLOW_TEXT_COLOR="\033[33m";
-CLOSE_YELLOW_TEXT_COLOR="\e[0m";
+CLOSE_COLOR_FORMATTING="\e[0m";
 OPEN_RED_TEXT_COLOR="\033[0;31m";
 pathToDir=$1;
 
@@ -9,7 +9,7 @@ if [ ${#pathToDir} -eq 0 ]; then echo "$OPEN_RED_TEXT_COLOR You must put path fo
 
 if [ ! -d $pathToDir ]
 then
-    echo "$OPEN_YELLOW_TEXT_COLOR warning: $pathToDir is not exists on your filesystem, but it will be created right now $CLOSE_YELLOW_TEXT_COLOR";
+    echo "$OPEN_YELLOW_TEXT_COLOR warning: $pathToDir is not exists on your filesystem, but it will be created right now $CLOSE_COLOR_FORMATTING";
     mkdir -p $pathToDir;
 fi
 
