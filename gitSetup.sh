@@ -10,3 +10,6 @@ then
     echo "$FYEL warning: $pathToDir is not exists on your filesystem, but it will be created right now \e[0m";
     mkdir -p $pathToDir;
 fi
+
+cd $pathToDir;
+git init;
