@@ -34,8 +34,8 @@ else
     git config --local user.email $userEmail;
 fi
 
-echo "* text=auto" > .gitattributes
-git add .gitattributes
-git commit -m "Initial setup"
+echo "* text=auto" > .gitattributes;
+git add .gitattributes;
+git commit -m "Initial setup";
 
 exit 0;
