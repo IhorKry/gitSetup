@@ -1,13 +1,15 @@
 #!/bin/sh
 
-FYEL="\033[33m" # foreground yellow
+OPEN_YELLOW_TEXT_COLOR="\033[33m";
+CLOSE_YELLOW_TEXT_COLOR="\e[0m";
+OPEN_RED_TEXT_COLOR="\033[0;31m";
 pathToDir=$1;
 
-if [ ${#pathToDir} -eq 0 ]; then echo "You must put path for directory in format: ./gitSetup.sh [PATH TO DIR]"; exit 1; fi;
+if [ ${#pathToDir} -eq 0 ]; then echo "$OPEN_RED_TEXT_COLOR You must put path for directory in format: ./gitSetup.sh [PATH TO DIR]"; exit 1; fi;
 
 if [ ! -d $pathToDir ]
 then
-    echo "$FYEL warning: $pathToDir is not exists on your filesystem, but it will be created right now \e[0m";
+    echo "$OPEN_YELLOW_TEXT_COLOR warning: $pathToDir is not exists on your filesystem, but it will be created right now $CLOSE_YELLOW_TEXT_COLOR";
     mkdir -p $pathToDir;
 fi
 
